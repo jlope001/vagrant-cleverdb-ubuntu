@@ -54,7 +54,7 @@ mysql \
 -e "UNLOCK TABLES;"
 
 # upload first dump (which is probably empty)
-if [ "$CLEVERDB_UPLOAD_DB_DUMP" = true ]; then
+if $CLEVERDB_UPLOAD_DB_DUMP; then
   cleverdb-upload /root/$CLEVERDB_DB_NAME.sql
 fi
 
