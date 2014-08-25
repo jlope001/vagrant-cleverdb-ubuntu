@@ -28,7 +28,7 @@ fi
 # setup replication
 mysql \
 -u root \
--p$CLEVERDB_DB_ROOT_PASSWORD \
+$CLEVERDB_DB_ROOT_PASSWORD \
 -h $CLEVERDB_DB_HOST \
 -P $CLEVERDB_DB_PORT \
 -e " \
@@ -40,7 +40,7 @@ mysql \
 # must be root for this one
 mysqldump \
 -u root \
--p$CLEVERDB_DB_ROOT_PASSWORD \
+$CLEVERDB_DB_ROOT_PASSWORD \
 -h $CLEVERDB_DB_HOST \
 -P $CLEVERDB_DB_PORT \
 --opt --master-data \
@@ -48,7 +48,7 @@ $CLEVERDB_DB_NAME > /root/$CLEVERDB_DB_NAME.sql
 
 mysql \
 -u root \
--p$CLEVERDB_DB_ROOT_PASSWORD \
+$CLEVERDB_DB_ROOT_PASSWORD \
 -h $CLEVERDB_DB_HOST \
 -P $CLEVERDB_DB_PORT \
 -e "UNLOCK TABLES;"
