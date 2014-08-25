@@ -14,7 +14,7 @@ fi
 # update configuration files
 sed -i 's~__CLEVERDB_API_KEY__~'"$CLEVERDB_API_KEY"'~g' /etc/cleverdb-agent/connect.conf
 sed -i 's~__CLEVERDB_DB_ID__~'"$CLEVERDB_DB_ID"'~g' /etc/cleverdb-agent/connect.conf
-sed -i 's~__CLEVERDB_CONNECT_HOST__~'"$CLEVERDB_DB_HOST_ID"'~g' /etc/cleverdb-agent/connect.conf
+sed -i 's~__CLEVERDB_CONNECT_HOST__~'"$CLEVERDB_CONNECT_HOST"'~g' /etc/cleverdb-agent/connect.conf
 
 sed -i 's~__CLEVERDB_DB_HOST__~'"$CLEVERDB_DB_HOST"'~g' /etc/cleverdb-agent/ports.conf
 sed -i 's~__CLEVERDB_DB_PORT__~'"$CLEVERDB_DB_PORT"'~g' /etc/cleverdb-agent/ports.conf
@@ -54,7 +54,7 @@ mysql \
 -e "UNLOCK TABLES;"
 
 # upload first dump (which is probably empty)
-if $CLEVERDB_UPLOAD_DB_DUMP; then
+if [ "$CLEVERDB_UPLOAD_DB_DUMP" = true ]; then
   cleverdb-upload /root/$CLEVERDB_DB_NAME.sql
 fi
 
