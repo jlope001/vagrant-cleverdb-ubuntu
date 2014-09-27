@@ -1,4 +1,4 @@
-# Dockerfile Vagrant CleverDB agent
+# Dockerfile Vagrant CleverDB agent - Ubuntu
 Setup a [CleverDB agent](https://cleverdb.io) that will connect to a database server and CleverDB services.
 Setup your own mysql server 5.6 image with CentOS 6.
 
